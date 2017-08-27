@@ -1,0 +1,8 @@
+---
+instances: 1
+memory: 1G
+applications:
+  - name: CouponVentage
+    memory: 1G
+    services:
+      - CouponVentage-MySQL
