@@ -49,7 +49,7 @@ public class CategoryController {
 	 * @param category
 	 * @return
 	 */
-	@RequestMapping(method=RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method=RequestMethod.POST,produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<CategoryDTO> addCategory(@RequestHeader HttpHeaders headers,@RequestParam CategoryDTO category)
 	{
 		CategoryDTO categoryDto = service.addCategory(headers,category);
@@ -63,7 +63,7 @@ public class CategoryController {
 	 * @param category
 	 * @return
 	 */
-	@RequestMapping(method=RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method=RequestMethod.PUT,produces= MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<CategoryDTO> updateCategory(@RequestHeader HttpHeaders headers,@RequestParam CategoryDTO category)
 	{
 		CategoryDTO categoryDto = service.updateCategory(headers,category);
@@ -76,7 +76,7 @@ public class CategoryController {
 	 * @param category
 	 * @return
 	 */
-	@RequestMapping(method=RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method=RequestMethod.DELETE,produces= MediaType.APPLICATION_JSON_VALUE)
 	public HttpStatus deleteCategory(@RequestHeader HttpHeaders headers,@RequestParam CategoryDTO category)
 	{
 		service.deleteCategory(headers,category);
