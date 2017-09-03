@@ -10,8 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name = "Coupon")
+@Component
 public class CouponDAO {
 
 	private static final long serialVersionUID = 1L;
@@ -32,9 +35,17 @@ public class CouponDAO {
 	
     @Column(name = "endDate")
     private Date endDate;
-	
+
+    @Column(name="storeId")
+    private Long storeId;
     
-    public Long getId() {
+    public Long getStoreId() {
+		return storeId;
+	}
+	public void setStoreId(Long storeId) {
+		this.storeId = storeId;
+	}
+	public Long getId() {
 		return Id;
 	}
 	public void setId(Long id) {
